@@ -10,3 +10,8 @@ button {
     padding: 3px 10px;
     cursor: pointer;
 }
+
+span {
+    border: 1px solid black;
+    background-color: lime;
+}
