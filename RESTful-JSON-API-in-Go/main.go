@@ -7,8 +7,13 @@ import (
 )
 
 func main() {
+	// Serve static files from the "static" directory
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+
+
+	// Handle requests for the home page
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		tmpl := template.Must(template.ParseFiles("../templates/home.html"))
+		tmpl := template.Must(template.ParseFiles("templates/home.html"))
 		err := tmpl.Execute(w, nil)
 		if err != nil {
 			log.Printf("Template execution failed: %v", err)
