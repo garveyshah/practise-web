@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	http.HandlerFunc("/", api.PageHandler)
+	http.HandleFunc("/", api.PageHandler)
 
 	// Routtes for the individual sections
 	// http.HandlerFunc()
